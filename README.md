@@ -1,13 +1,8 @@
-## MobileStyleGAN: A Lightweight Convolutional Neural Network for High-Fidelity Image Synthesis
+A fork of MobileStyleGAN that adds a VIT for conditioning the GAN on downstream tasks
 
-Official PyTorch Implementation
 
-<p align="center">
-  <img src="res/faces.jpeg"/>
-</p>
 
-The accompanying videos can be found on [YouTube](https://www.youtube.com/playlist?list=PLstKhmdpWBtwsvq_27ALmPbf_mBLmk0uI).
-For more details, please refer to the [paper](https://arxiv.org/abs/2104.04767).
+Below is the old readme
 
 ## Requirements
 

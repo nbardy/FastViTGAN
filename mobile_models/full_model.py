@@ -342,13 +342,19 @@ class MultiModalDatasetLoader(Dataset):
         return len(self.dataset)
 
     def _getitem__(self, index):
-        self.mask = rand_perlin_2d((256, 256), (8, 8))
-
         datum = self.dataset[index]
 
-        # For each item:
-        # Loads an two images from the dataset
-        # Generates a CLIP embedding for each image and it's text label
+        base_tile = Image.open(datum["base_tile"])
+        target_image = Image.open(datum["target_image_filename"])
+        mask = Image.open(datum["mask_filename"])
+        clip_features = datum["clip_features"]
+
+        return {
+            "base_tile": base_tile,
+            "target_image": target_image,
+            "mask": mask,
+            "clip_features": clip_features,
+        }
 
 
 class MultiModalFastGAN(nn.torch):
